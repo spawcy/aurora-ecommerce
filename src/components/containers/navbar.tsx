@@ -42,7 +42,7 @@ export default function Navbar() {
               />
             </svg>
           </figure>
-          <HeartIcon className="block max-w-full size-8" />
+          <HeartIcon className="block max-w-full size-8 sm:size-6" />
         </div>
       </div>
     </header>
