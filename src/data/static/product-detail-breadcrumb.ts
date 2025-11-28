@@ -1,0 +1,1 @@
+export const PRODUCT_DETAIL_BREADCRUMB_ITEM:string[] = ["Products"];
