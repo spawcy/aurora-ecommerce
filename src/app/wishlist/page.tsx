@@ -1,4 +1,5 @@
-import Image from "next/image";
+import WishlistCard from "@/components/layouts/wishlist/wishlist-card";
+import { Button } from "@/components/ui/button";
 
 export default function WishlistsPage() {
   return (
@@ -14,30 +15,13 @@ export default function WishlistsPage() {
         <h2 className="text-3xl">Your Favorite Items</h2>
         <p className="mt-1.5">There are 30 products in the list</p>
 
-        <div className="mt-10 space-y-4">
+        <div className="mt-10 grid grid-cols-2 gap-4 border border-lg p-4 rounded-lg">
           {Array.from({ length: 3 }, (_, i) => (
             <WishlistCard key={i} />
           ))}
         </div>
+        <Button className="mt-10 px-10">Buy All</Button>
       </div>
     </section>
-  );
-}
-
-function WishlistCard() {
-  return (
-    <div className="flex items-center border rounded-lg border-border gap-8 p-4">
-      <figure className="rounded-md overflow-hidden border border-border">
-        <Image
-          src="/product__placeholder.png"
-          alt="product__placeholder"
-          width={70}
-          height={70}
-          className="block max-w-full"
-        />
-      </figure>
-      <p>Bussiness Compact Saw</p>
-      <p>20</p>
-    </div>
   );
 }
