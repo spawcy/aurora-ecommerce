@@ -45,7 +45,7 @@ export default function ShopPage() {
 function ShopFilters() {
   return (
     <div className="mt-16">
-      <header className="bg-accent text-foreground p-4">
+      {/* <header className="bg-accent text-foreground p-4">
         <ul className="flex items-center justify-evenly gap-4 max-w-4xl mx-auto ">
           <p>Special offers</p>
           <p>Best Sellers</p>
@@ -60,7 +60,7 @@ function ShopFilters() {
             <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
           </InputGroup>
         </ul>
-      </header>
+      </header> */}
       <ShopMainLayout />
     </div>
   );
@@ -78,7 +78,14 @@ function ShopMainLayout() {
         </aside>
       </div>
       <section className="w-full px-4">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <InputGroup className="max-w-sm ml-auto">
+          <InputGroupInput placeholder="Search..." />
+          <InputGroupAddon>
+            <SearchIcon />
+          </InputGroupAddon>
+          <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
+        </InputGroup>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
           <ProductCard />
         </div>
         <PaginationDemo />
