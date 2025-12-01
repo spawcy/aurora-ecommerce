@@ -6,10 +6,6 @@ const HEADER_CARD_ITEMS = [
     title: "100+",
     text: "Proven Automation Solutions",
   },
-  // {
-  //   title: "HIGH MTBF",
-  //   text: "Reliability Certified for 24/7 Operations",
-  // },
   {
     title: "TRUSTED BY",
     text: "Major Automotive Manufacturers",
@@ -22,7 +18,7 @@ export default function Home() {
       <section id="header" className="bg-secondary py-20">
         <div className="max-w-7xl items-center grid md:grid-cols-[1.5fr_1fr] gap-10 mx-auto p-4">
           <div className="left">
-            <h2 className="text-5xl md:text-7xl text-foreground leading-normal md:leading-relaxed">
+            <h2 className="text-5xl md:text-7xl text-foreground leading-normal">
               Smart IoT Gateways
             </h2>
             <p className="mt-2.5 text-secondary-foreground">
