@@ -3,7 +3,9 @@
 import { HeartIcon } from "lucide-react";
 import { useState } from "react";
 import NavItem from "@/components/layouts/navbar/nav-item";
+import { useRouter } from "next/navigation";
 export default function Navbar() {
+  const router = useRouter();
   const [hamActive, setHamActive] = useState<boolean>(false);
   const menuTransitionClass = hamActive && "active";
 
@@ -29,7 +31,7 @@ export default function Navbar() {
               <path className="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
             </svg>
           </figure>
-          <HeartIcon className="block max-w-full size-8 sm:size-6" />
+          <HeartIcon onClick={() => router.push("/wishlist")} className="block max-w-full size-8 sm:size-6 cursor-pointer hover:text-primary/60" />
         </div>
       </div>
     </header>
