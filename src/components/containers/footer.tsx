@@ -15,7 +15,11 @@ export default function Footer() {
         </div>
         <ul className="grid grid-cols-3 gap-6 max-w-xl ml-auto">
           {FOOTER_LINK_ITEMS.map((item, index) => (
-            <Link href={`/${item}`} key={index}>
+            <Link
+              href={`/${item}`}
+              key={index}
+              className="capitalize text-primary hover:underline hover:text-foreground/50"
+            >
               {item}
             </Link>
           ))}
