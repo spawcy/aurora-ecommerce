@@ -17,17 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Aurora | IoT E-commerce",
-  description:
-    "Find reliable IoT solutions, industrial sensors, automation components, and smart technology for your enterprise and manufacturing needs. Fast, Dependable, and Ready for Implementation.",
-  keywords: [
-    "IoT E-commerce",
-    "Industrial Automation",
-    "Industrial Sensor",
-    "Smart Factory",
-    "Automation Components",
-    "PLC Components",
-    "Autonics alternative",
-  ],
+  description: "Find reliable IoT solutions, industrial sensors, automation components, and smart technology for your enterprise and manufacturing needs. Fast, Dependable, and Ready for Implementation.",
+  keywords: ["IoT E-commerce", "Industrial Automation", "Industrial Sensor", "Smart Factory", "Automation Components", "PLC Components", "Autonics alternative"],
 };
 
 export default function RootLayout({
@@ -37,9 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col justify-between`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col justify-between`}>
         <Navbar />
         <Toaster position="top-center" />
         <main className="min-h-screen">{children}</main>
