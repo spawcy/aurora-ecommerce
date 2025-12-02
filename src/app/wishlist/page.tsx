@@ -3,7 +3,7 @@ import WishlistCard from "@/components/layouts/wishlist/wishlist-card";
 
 export default function WishlistsPage() {
   return (
-    <section className="max-w-7xl mx-auto px-4 mt-10 md:mt-40 grid md:grid-cols-[1fr_2fr] items-start gap-20">
+    <section className="max-w-7xl mx-auto px-4 mt-10 md:mt-40 grid md:grid-cols-[1fr_2fr] items-start gap-20 pb-10">
       <div className="bg-accent p-4 rounded-md">
         <b className="text-foreground">Welcome</b>
         <p className="text-secondary-foreground mt-1.5">This is your wishlist. A collection of your most preffered items in our store. Heart away all your favorite products.</p>
