@@ -1,4 +1,4 @@
-import { PRODUCTS_PLACEHOLDER } from "@/app/const/static/product-placeholder";
+import { PRODUCTS_PLACEHOLDER } from "@/const/static/product-placeholder";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
