@@ -2,11 +2,12 @@
 
 import ShopDetailTabs from "@/components/layouts/product-detail/product-detail-tabs";
 import ProductCard from "@/components/layouts/products/product-card";
-import { useFetching } from "@/app/hooks/use-fetching";
+import { useFetching } from "@/hooks/use-fetching";
 import DynamicBreadcrumb from "@/components/common/DynamicBreadcrumb";
 import ProductInformations from "@/components/layouts/product-detail/product-informations";
 import { use } from "react";
 import ShopDetailLoadingPage from "@/components/layouts/product-detail/loading";
+import ProductLists from "@/components/layouts/products/product-lists";
 
 export default function ShopDetailPage({ params }: { params: Promise<{ name: string }> }) {
   const { name } = use(params);
@@ -30,9 +31,7 @@ export default function ShopDetailPage({ params }: { params: Promise<{ name: str
 
       <section className="my-10 max-w-7xl mx-auto px-4">
         <h2 className="text-2xl">Recommended Product</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mt-10">
-          <ProductCard qty={4} />
-        </div>
+        <ProductLists className="sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" />
       </section>
     </div>
   );
