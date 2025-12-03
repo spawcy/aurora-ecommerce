@@ -6,7 +6,6 @@ export default function ProductLists({ className }: { className?: string }) {
   const { data: products, isLoading, error } = useFetching("/api/products");
 
   if (!products) return <p>There is no data found</p>;
-  if (isLoading) return <p>Loading products...</p>;
   if (error) return <p>{error}</p>;
 
   return (
