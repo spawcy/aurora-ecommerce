@@ -16,7 +16,7 @@ export default function ProductGridContainer() {
       <SearchInput search={search} setSearch={setSearch} />
       {isLoading && <ProductCardLoading />}
       {error && <ProductsNotFound />}
-      <ProductLists data={filteredProducts} className="sm:grid-cols-2 lg:grid-cols-3" />
+      <ProductLists className="sm:grid-cols-2 lg:grid-cols-3" />
       <DynamicPagination />
     </section>
   );
