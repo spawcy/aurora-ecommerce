@@ -9,8 +9,6 @@ export async function GET(req: NextRequest) {
     return data.product_id === product_id;
   });
 
-  console.log(find_product_by_id);
-
   if (!product_id) {
     return NextResponse.json({ status: 404, data: null, message: "product not found" });
   }

@@ -31,28 +31,4 @@ export const PRODUCTS_PLACEHOLDER = [
     product_description: "A powerful industrial IoT gateway supporting Ethernet, WiFi, and LTE connectivity. Features edge processing, secure data routing, and cloud integration capabilities.",
     product_categories: ["gateway", "industrial", "edge-computing"],
   },
-  {
-    product_id: "cjx8f92k0001e0s3p9f1q1af",
-    product_title: "BLE Temperature Beacon",
-    product_image: "/product__placeholder.png",
-    product_available: true,
-    product_description: "A battery-powered BLE beacon that broadcasts temperature and humidity data. Optimized for indoor tracking, storage warehouses, and portable monitoring solutions.",
-    product_categories: ["beacons", "ble", "sensors"],
-  },
-  {
-    product_id: "cjx8f92k0001f0s3p9f1q1ag",
-    product_title: "Smart Door & Window Contact Sensor",
-    product_image: "/product__placeholder.png",
-    product_available: false,
-    product_description: "A low-profile contact sensor detecting door and window openings using Zigbee communication. Ideal for home security setups and automation triggers.",
-    product_categories: ["security", "zigbee", "sensors"],
-  },
-  {
-    product_id: "cjx8f92k0001g0s3p9f1q1ah",
-    product_title: "GPS Asset Tracker Mini",
-    product_image: "/product__placeholder.png",
-    product_available: true,
-    product_description: "A compact GPS tracker with long battery life designed for vehicles, equipment tracking, and logistics. Supports LTE-M/NB-IoT connectivity with geofencing features.",
-    product_categories: ["tracker", "gps", "nb-iot"],
-  },
 ];

@@ -1,4 +1,4 @@
-export const NAV_ITEMS: {name: string, href: string}[] = [
+export const NAV_ITEMS: { name: string; href: string }[] = [
   {
     name: "Home",
     href: "/",
@@ -6,9 +6,5 @@ export const NAV_ITEMS: {name: string, href: string}[] = [
   {
     name: "Products",
     href: "/products",
-  },
-  {
-    name: "About",
-    href: "/about",
   },
 ];
