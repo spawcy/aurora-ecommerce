@@ -2,7 +2,7 @@
 import { useFetching } from "@/hooks/use-fetching";
 import ProductCard from "./product-card";
 
-export default function ProductLists({ data, className }: { data: any; className?: string }) {
+export default function ProductLists({ className }: { className?: string }) {
   const { data: products, isLoading, error } = useFetching("/api/products");
 
   if (!products) return <p>There is no data found</p>;
@@ -10,7 +10,6 @@ export default function ProductLists({ data, className }: { data: any; className
   if (error) return <p>{error}</p>;
 
   return (
-    // <div className={`grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 ${className}`}>
     <div className={`grid gap-4 mt-8 ${className}`}>
       {products.data.map((product, index) => (
         <ProductCard key={index} title={product.product_title} />
