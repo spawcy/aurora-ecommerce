@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -22,10 +21,10 @@ export default function ProductCard({ title }: ProductCardProps) {
   );
 }
 
-export function ProductCardLoading() {
+export function ProductCardLoading({ count = 4, className = "sm:grid-cols-2 md:grid-cols-3" }: { className?: string; count?: number }) {
   return (
-    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 mt-6">
-      {Array.from({ length: 6 }, (_, i) => (
+    <div className={`grid gap-10 mt-6 ${className}`}>
+      {Array.from({ length: count }, (_, i) => (
         <div key={i} className="flex flex-col items-center justify-center  p-4 overflow-hidden">
           <div className="w-[250px] h-[250px] bg-slate-300 rounded-md animate-pulse" />
 
