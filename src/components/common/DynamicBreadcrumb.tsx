@@ -1,15 +1,8 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { PRODUCT_DETAIL_BREADCRUMB_ITEM } from "@/data/static/product-detail-breadcrumb";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { PRODUCT_DETAIL_BREADCRUMB_ITEM } from "@/const/static/product-detail-breadcrumb";
 
 export default function DynamicBreadcrumb({ data }: { data?: string[] }) {
   const pathname = usePathname();

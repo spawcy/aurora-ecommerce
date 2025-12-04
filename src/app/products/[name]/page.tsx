@@ -1,7 +1,6 @@
 "use client";
 
 import ShopDetailTabs from "@/components/layouts/product-detail/product-detail-tabs";
-import ProductCard from "@/components/layouts/products/product-card";
 import { useFetching } from "@/hooks/use-fetching";
 import DynamicBreadcrumb from "@/components/common/DynamicBreadcrumb";
 import ProductInformations from "@/components/layouts/product-detail/product-informations";

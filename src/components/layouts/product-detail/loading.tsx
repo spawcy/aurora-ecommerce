@@ -1,3 +1,5 @@
+import { ProductCardLoading } from "../products/product-card";
+
 export default function ShopDetailLoadingPage() {
   return (
     <div className="mt-4 sm:mt-19 pb-10">
@@ -27,17 +29,7 @@ export default function ShopDetailLoadingPage() {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-24">
-          {Array.from({ length: 4 }, (_, i) => (
-            <div key={i} className="flex flex-col items-center justify-center  p-4 overflow-hidden">
-              <div className="w-[250px] h-[250px] bg-slate-300 rounded-md animate-pulse" />
-
-              <div className="mt-4 w-full">
-                <div className="h-6 w-3/4 mx-auto bg-slate-300 rounded-md animate-pulse mb-4" />
-              </div>
-            </div>
-          ))}
-        </div>
+        <ProductCardLoading className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-24" />
       </div>
     </div>
   );
