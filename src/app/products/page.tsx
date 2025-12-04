@@ -13,7 +13,7 @@ export default function ShopPage() {
 
 function ShopFilters() {
   return (
-    <div className="mt-16">
+    <div className="sm:mt-16">
       {/* <header className="bg-accent text-foreground p-4">
         <ul className="flex items-center justify-evenly gap-4 max-w-4xl mx-auto ">
           <p>Special offers</p>
