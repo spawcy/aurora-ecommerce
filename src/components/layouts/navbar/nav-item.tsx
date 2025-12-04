@@ -1,4 +1,4 @@
-import { NAV_ITEMS } from "@/data/static/nav-items";
+import { NAV_ITEMS } from "@/const/static/nav-items";
 import Link from "next/link";
 export default function NavItem() {
   return (
