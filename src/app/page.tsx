@@ -1,16 +1,6 @@
-import ProductLists from "@/components/layouts/products/product-lists";
+import HeaderCard from "@/components/layouts/home/header-card";
+import NewArrivalProducts from "@/components/layouts/home/new-arrival-products";
 import Image from "next/image";
-
-const HEADER_CARD_ITEMS = [
-  {
-    title: "100+",
-    text: "Proven Automation Solutions",
-  },
-  {
-    title: "TRUSTED BY",
-    text: "Major Automotive Manufacturers",
-  },
-];
 
 export default function Home() {
   return (
@@ -31,23 +21,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="my-10 max-w-7xl mx-auto px-4">
-        <h2 className="text-2xl">New Product Arrival</h2>
-        <ProductLists className="md:grid-cols-3 lg:grid-cols-4" />
-      </section>
+      <NewArrivalProducts />
     </main>
-  );
-}
-
-function HeaderCard() {
-  return (
-    <>
-      {HEADER_CARD_ITEMS.map(({ title, text }, index) => (
-        <div key={index}>
-          <b className="text-xl md:text-2xl font-bold">{title}</b>
-          <p className="mt-1.5">{text}</p>
-        </div>
-      ))}
-    </>
   );
 }
