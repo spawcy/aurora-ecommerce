@@ -16,7 +16,7 @@ export default function SearchInput({ search, setSearch }: any) {
   }, [debouncedSearchTerm]);
 
   return (
-    <InputGroup className="max-w-sm ml-auto py-4">
+    <InputGroup className="max-w-xs ml-auto py-4 ">
       <InputGroupInput value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="Search..." />
       <InputGroupAddon>
         <SearchIcon />
