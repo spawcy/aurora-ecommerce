@@ -13,5 +13,5 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ status: 404, data: null, message: "product not found" });
   }
 
-  return NextResponse.json({ status: 200, data_temp: find_product_by_id, id_param: product_id, message: "fetching success" });
+  return NextResponse.json({ status: 200, data: find_product_by_id, id_param: product_id, message: "fetching success" });
 }
