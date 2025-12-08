@@ -5,13 +5,13 @@ import SearchInput from "@/components/common/search-input";
 import { useState } from "react";
 import { useFetching } from "@/hooks/use-fetching";
 import { ProductCardLoading, ProductsNotFound } from "./product-card";
+import { ProductPlaceholderItem } from "@/const/interfaces/product-placeholder-item";
 
 export default function ProductGridContainer() {
   const [search, setSearch] = useState<string>("");
   const { data: products, isLoading, error } = useFetching(`/api/products`);
-
-  const rawProducts = products?.data || [];
-
+  const apiData = products?.data;
+  const rawProducts: ProductPlaceholderItem[] = Array.isArray(apiData) ? apiData : apiData ? [apiData] : [];
   const productDataForList = search ? rawProducts.filter((product) => product.product_title.toLowerCase().includes(search.toLowerCase())) : rawProducts;
   const productListData = { data: productDataForList };
   const isDataNotFound = !isLoading && !error && productDataForList.length === 0;

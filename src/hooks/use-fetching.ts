@@ -6,7 +6,7 @@ import { useState } from "react";
 
 interface ApiResponse {
   status: number;
-  data: ProductPlaceholderItem[];
+  data: ProductPlaceholderItem[] | ProductPlaceholderItem;
 }
 
 export function useFetching(apiUrl: string) {

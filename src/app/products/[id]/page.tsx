@@ -15,7 +15,13 @@ export default function ShopDetailPage({ params }: { params: Promise<{ id: strin
 
   if (isLoading) return <ShopDetailLoadingPage />;
   if (!data) return <p>Theres something wrong with the dev</p>;
-  const productTitle = data?.data?.[0].product_title;
+  let productTitle: string = "Product Detail";
+
+  if (Array.isArray(data.data)) {
+    productTitle = data.data[0]?.product_title || "Multiple Products";
+  } else {
+    productTitle = data.data.product_title;
+  }
 
   return (
     <div className="mt-4 sm:mt-24 pb-10">
