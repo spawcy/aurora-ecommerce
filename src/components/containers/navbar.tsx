@@ -4,13 +4,14 @@ import { HeartIcon } from "lucide-react";
 import { useState } from "react";
 import NavItem from "@/components/layouts/navbar/nav-item";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 export default function Navbar() {
   const router = useRouter();
   const [hamActive, setHamActive] = useState<boolean>(false);
   const menuTransitionClass = hamActive && "active";
 
   return (
-    <header className="fixed max-sm:bottom-0 sm:top-0 left-0 right-0 py-4 px-4 max-sm:border-t sm:border-b border-border bg-primary-foreground z-10">
+    <header className="fixed max-sm:bottom-0 sm:top-0 left-0 right-0 py-6 px-4 max-sm:border-t sm:border-b border-border bg-primary-foreground z-10">
       <ul
         className={`navHeight max-sm:flex sm:hidden bg-primary-foreground w-full rounded-md px-4 space-y-5 flex-col
       transition duration-300 ${menuTransitionClass}`}
@@ -18,8 +19,10 @@ export default function Navbar() {
         <NavItem />
       </ul>
 
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <p className="text-xl">Aurora</p>
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
+        <figure className="block h-full cursor-pointer">
+          <Image src="/aurora__logo.png" alt="logo__aurora--light" width={125} height={20} className="block max-w-full cursor-pointer" />
+        </figure>
         <div className="right flex max-sm:gap-4 sm:gap-6 items-center">
           <nav className="max-sm:hidden sm:flex max-w-sm gap-6 gap-mx-auto flex items-center justify-between">
             <NavItem />

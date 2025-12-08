@@ -12,7 +12,7 @@ export default function NewArrivalProducts() {
     <section className="my-10 max-w-7xl mx-auto px-4">
       <h2 className="text-2xl">New Product Arrival</h2>
       {isLoading && <ProductCardLoading count={4} className="md:grid-cols-3 lg:grid-cols-4" />}
-      <ProductLists data={products} className="md:grid-cols-3 lg:grid-cols-4" />
+      <ProductLists count={4} data={products} className="md:grid-cols-3 lg:grid-cols-4" />
     </section>
   );
 }

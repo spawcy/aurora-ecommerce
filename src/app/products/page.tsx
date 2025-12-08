@@ -6,6 +6,7 @@ export const metadata: Metadata = {
 import { Metadata } from "next";
 import ProductGridContainer from "@/components/layouts/products/product-grid-container";
 import DynamicAccordion from "@/components/common/dynamic-accordion";
+import { Suspense } from "react";
 
 export default function ShopPage() {
   return <ShopFilters />;
@@ -14,22 +15,6 @@ export default function ShopPage() {
 function ShopFilters() {
   return (
     <div className="sm:mt-16">
-      {/* <header className="bg-accent text-foreground p-4">
-        <ul className="flex items-center justify-evenly gap-4 max-w-4xl mx-auto ">
-          <p>Special offers</p>
-          <p>Best Sellers</p>
-          <p>Arrival</p>
-          <p>Recommended</p>
-
-          <InputGroup className="max-w-sm">
-            <InputGroupInput placeholder="Search..." />
-            <InputGroupAddon>
-              <SearchIcon />
-            </InputGroupAddon>
-            <InputGroupAddon align="inline-end">12 results</InputGroupAddon>
-          </InputGroup>
-        </ul>
-      </header> */}
       <ShopMainLayout />
     </div>
   );
@@ -41,7 +26,9 @@ function ShopMainLayout() {
       <div className="h-full">
         <aside className="flex-shrink-0 border rounded-lg border-border p-4 sticky top-24">
           <p className="pb-4 border-b border-border text-muted-foreground text-sm">filter by</p>
-          <DynamicAccordion />
+          <Suspense fallback={<p>Loading filters...</p>}>
+            <DynamicAccordion />
+          </Suspense>
         </aside>
       </div>
       <ProductGridContainer />
