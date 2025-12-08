@@ -1,27 +1,18 @@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
+import { DynamicRadioProps } from "@/const/interfaces/radio-item";
 
-export function DynamicRadio() {
+export default function DynamicRadio({ data, categoryKey, selectedValue, onValueChange }: DynamicRadioProps) {
   return (
-    <RadioGroup defaultValue="comfortable">
-      <div className="flex items-center gap-3">
-        <RadioGroupItem value="default" id="r1" className="cursor-pointer" />
-        <Label htmlFor="r1" className="cursor-pointer">
-          IoT Gateway
-        </Label>
-      </div>
-      <div className="flex items-center gap-3">
-        <RadioGroupItem value="comfortable" id="r2" className="cursor-pointer" />
-        <Label htmlFor="r2" className="cursor-pointer">
-          Router
-        </Label>
-      </div>
-      <div className="flex items-center gap-3">
-        <RadioGroupItem value="compact" id="r3" className="cursor-pointer" />
-        <Label htmlFor="r3" className="cursor-pointer">
-          Repeater
-        </Label>
-      </div>
+    <RadioGroup value={selectedValue} onValueChange={onValueChange}>
+      {data.map((item) => (
+        <div key={item.value} className="flex items-center gap-3">
+          <RadioGroupItem value={item.value} id={`${categoryKey}-${item.value}`} className="cursor-pointer" />
+          <Label htmlFor={`${categoryKey}-${item.value}`} className="cursor-pointer">
+            {item.label}
+          </Label>
+        </div>
+      ))}
     </RadioGroup>
   );
 }

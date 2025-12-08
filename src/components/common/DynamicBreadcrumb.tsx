@@ -2,12 +2,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
-import { PRODUCT_DETAIL_BREADCRUMB_ITEM } from "@/const/static/product-detail-breadcrumb";
 
-export default function DynamicBreadcrumb({ data }: { data?: string[] }) {
-  const pathname = usePathname();
-  const segments = pathname.split("/");
-  const lastSegment = segments.at(-1);
+export default function DynamicBreadcrumb({ data }: { data: string[] }) {
+  const currentPage = data.at(-1);
+
   return (
     <Breadcrumb>
       <BreadcrumbList>
@@ -17,7 +15,7 @@ export default function DynamicBreadcrumb({ data }: { data?: string[] }) {
           </BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
-        {PRODUCT_DETAIL_BREADCRUMB_ITEM.map((item, index) => (
+        {data.slice(0, -1).map((item, index) => (
           <div className="flex items-center gap-2" key={index}>
             <BreadcrumbItem>
               <BreadcrumbLink asChild>
@@ -28,7 +26,7 @@ export default function DynamicBreadcrumb({ data }: { data?: string[] }) {
           </div>
         ))}
         <BreadcrumbItem>
-          <BreadcrumbPage>{lastSegment}</BreadcrumbPage>
+          <BreadcrumbPage>{currentPage}</BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
