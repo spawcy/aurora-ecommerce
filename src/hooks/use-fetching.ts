@@ -1,15 +1,12 @@
 "use client";
 
+import { ProductPlaceholderItem } from "@/const/interfaces/product-placeholder-item";
 import { useEffect } from "react";
 import { useState } from "react";
 
-interface Product {
-  product_title: string;
-}
-
 interface ApiResponse {
   status: number;
-  data: Product[];
+  data: ProductPlaceholderItem[];
 }
 
 export function useFetching(apiUrl: string) {
