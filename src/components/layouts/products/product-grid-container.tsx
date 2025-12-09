@@ -19,7 +19,7 @@ export default function ProductGridContainer() {
   return (
     <section className="w-full px-4">
       <SearchInput search={search} setSearch={setSearch} />
-      {isLoading && <ProductCardLoading />}
+      {isLoading && <ProductCardLoading count={6} />}
       {error && <ProductsNotFound />}
       {isDataNotFound && <ProductsNotFound />}
       {!isLoading && !error && productDataForList.length > 0 && (
