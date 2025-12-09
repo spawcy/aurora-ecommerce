@@ -6,7 +6,7 @@ import DynamicBreadcrumb from "@/components/common/DynamicBreadcrumb";
 import ProductInformations from "@/components/layouts/product-detail/product-informations";
 import { use } from "react";
 import ShopDetailLoadingPage from "@/components/layouts/product-detail/loading";
-import ProductLists from "@/components/layouts/products/product-lists";
+import ProductLists, { ProductNotFound } from "@/components/layouts/products/product-lists";
 
 export default function ShopDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -14,14 +14,10 @@ export default function ShopDetailPage({ params }: { params: Promise<{ id: strin
   const { data, isLoading } = useFetching("/api/product?product_id=" + id);
 
   if (isLoading) return <ShopDetailLoadingPage />;
-  if (!data) return <p>Theres something wrong with the dev</p>;
-  let productTitle: string = "Product Detail";
-
-  if (Array.isArray(data.data)) {
-    productTitle = data.data[0]?.product_title || "Multiple Products";
-  } else {
-    productTitle = data.data.product_title;
-  }
+  const productPayload = data?.data;
+  const isProductDataMissing = !productPayload || (Array.isArray(productPayload) && productPayload.length === 0);
+  if (isProductDataMissing) return <ProductNotFound />;
+  let productTitle: string = Array.isArray(productPayload) ? productPayload[0]?.product_title ?? "Multiple Products" : productPayload.product_title ?? "Product Detail";
 
   return (
     <div className="mt-4 sm:mt-24 pb-10">
