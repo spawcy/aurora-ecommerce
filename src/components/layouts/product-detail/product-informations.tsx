@@ -5,7 +5,7 @@ export default function ProductInformations({ product }: { product?: any }) {
   return (
     <div className="grid md:grid-cols-2 gap-x-10 gap-y-10 mt-10">
       <ProductGallery primary={product.product_image} />
-      <ProductDescription title={product.product_title} description={product.product_description} />
+      <ProductDescription title={product.product_title} description={product.product_description} categories={product.product_categories} />
     </div>
   );
 }
@@ -31,23 +31,23 @@ export function ProductGallery({ primary }: { primary: string }) {
   );
 }
 
-export function ProductDescription({ title, description }: { title?: string; description?: string }) {
+export function ProductDescription({ title, description, categories }: { title?: string; description?: string; categories: string[] }) {
   return (
     <div>
       <h2 className="text-3xl sm:text-5xl font-semibold text-foreground mt-4 leading-relaxed">{title}</h2>
       <p className="text-secondary-foreground mt-4 leading-relaxed">{description}</p>
 
       <ProductActions />
-      <ProductCategory />
+      <ProductCategory categories={categories} />
     </div>
   );
 }
 
-export function ProductCategory() {
+export function ProductCategory({ categories }: { categories: string[] }) {
   return (
     <div className="mt-8">
       <b className="text-foreground">Categories</b>
-      <p className="text-secondary-foreground">Sensors</p>
+      <p className="text-muted-foreground">{categories.join(", ")}</p>
     </div>
   );
 }
