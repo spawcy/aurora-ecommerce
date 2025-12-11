@@ -18,7 +18,7 @@ export function useFetching(apiUrl: string) {
     let isMounted = true;
 
     async function fetchData() {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // await new Promise((resolve) => setTimeout(resolve, 1000));
       setIsLoading(true);
       setError(null);
 
