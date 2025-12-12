@@ -1,15 +1,24 @@
 "use client";
 
 import { HeartIcon } from "lucide-react";
-import { useState } from "react";
+import {  useState } from "react";
 import NavItem from "@/components/layouts/navbar/nav-item";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
+import { NO_NAV_FOOTER_PATH_ITEMS, VALID_EXACT_ROUTES } from "@/const/static/disable-nav-footer-path-items";
+
 export default function Navbar() {
   const router = useRouter();
+  const currentPath = usePathname();
   const [hamActive, setHamActive] = useState<boolean>(false);
   const menuTransitionClass = hamActive && "active";
-
+  const isValidRoute = () => {
+    if (VALID_EXACT_ROUTES.includes(currentPath)) return true;
+    const validDynamicPatterns = [/^\/products\/[a-z0-9]+$/i];
+    return validDynamicPatterns.some((pattern) => pattern.test(currentPath));
+  };
+  const shouldHideNavbarFooter = NO_NAV_FOOTER_PATH_ITEMS.includes(currentPath) || !isValidRoute();
+  if (shouldHideNavbarFooter) return null;
   return (
     <header className="fixed max-sm:bottom-0 sm:top-0 left-0 right-0 py-6 px-4 max-sm:border-t sm:border-b border-border bg-primary-foreground z-10">
       <ul
