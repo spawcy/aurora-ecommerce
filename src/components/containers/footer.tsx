@@ -7,7 +7,6 @@ import { NO_NAV_FOOTER_PATH_ITEMS, VALID_EXACT_ROUTES } from "@/const/static/dis
 
 export default function Footer() {
   const currentPath = usePathname();
-  const noNavPaths = ["/login", "/signup"];
   const isValidRoute = () => {
     if (VALID_EXACT_ROUTES.includes(currentPath)) return true;
     const validDynamicPatterns = [/^\/products\/[a-z0-9]+$/i];
