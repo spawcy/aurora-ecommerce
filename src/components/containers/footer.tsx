@@ -1,7 +1,21 @@
+"use client";
 import { FOOTER_LINK_ITEMS } from "@/const/static/footer-data-items";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { NO_NAV_FOOTER_PATH_ITEMS, VALID_EXACT_ROUTES } from "@/const/static/disable-nav-footer-path-items";
+
 export default function Footer() {
+  const currentPath = usePathname();
+  const noNavPaths = ["/login", "/signup"];
+  const isValidRoute = () => {
+    if (VALID_EXACT_ROUTES.includes(currentPath)) return true;
+    const validDynamicPatterns = [/^\/products\/[a-z0-9]+$/i];
+    return validDynamicPatterns.some((pattern) => pattern.test(currentPath));
+  };
+  const shouldHideNavbarFooter = NO_NAV_FOOTER_PATH_ITEMS.includes(currentPath) || !isValidRoute();
+  if (shouldHideNavbarFooter) return null;
+
   return (
     <footer className="py-10 bg-accent">
       <div className="max-w-7xl mx-auto grid px-4 sm:grid-cols-2 gap-20">
