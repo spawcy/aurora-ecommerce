@@ -18,7 +18,8 @@ export default function ShopDetailPage({ params }: { params: Promise<{ id: strin
   const isProductDataMissing = !productPayload || (Array.isArray(productPayload) && productPayload.length === 0);
   if (isProductDataMissing) return <ProductNotFound />;
   let productTitle: string = Array.isArray(productPayload) ? productPayload[0]?.product_title ?? "Multiple Products" : productPayload.product_title ?? "Product Detail";
-
+  document.title = productTitle ?? "Product Detail";
+  
   return (
     <div className="mt-4 sm:mt-24 pb-10">
       <section className="max-w-7xl mx-auto p-4">
