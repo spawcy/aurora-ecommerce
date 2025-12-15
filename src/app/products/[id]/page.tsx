@@ -7,6 +7,8 @@ import ProductInformations from "@/components/layouts/product-detail/product-inf
 import { use } from "react";
 import ShopDetailLoadingPage from "@/components/layouts/product-detail/loading";
 import ProductLists, { ProductNotFound } from "@/components/layouts/products/product-lists";
+import { shuffleArray } from "@/hooks/use-shuffle-array";
+import { ProductPlaceholderItem } from "@/const/interfaces/product-placeholder-item";
 
 export default function ShopDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -19,7 +21,13 @@ export default function ShopDetailPage({ params }: { params: Promise<{ id: strin
   if (isProductDataMissing) return <ProductNotFound />;
   let productTitle: string = Array.isArray(productPayload) ? productPayload[0]?.product_title ?? "Multiple Products" : productPayload.product_title ?? "Product Detail";
   document.title = productTitle ?? "Product Detail";
-  
+  const allProducts: ProductPlaceholderItem[] = Array.isArray(products?.data) ? products.data : products?.data ? [products.data] : [];
+  const randomizedProducts = shuffleArray(allProducts).slice(0, 4);
+
+  const randomizedProductsPayload = {
+    data: randomizedProducts,
+  };
+
   return (
     <div className="mt-4 sm:mt-24 pb-10">
       <section className="max-w-7xl mx-auto p-4">
@@ -35,7 +43,7 @@ export default function ShopDetailPage({ params }: { params: Promise<{ id: strin
 
       <section className="my-10 max-w-7xl mx-auto px-4">
         <h2 className="text-2xl">Recommended Product</h2>
-        <ProductLists count={4} data={products} className="sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" />
+        <ProductLists count={4} data={randomizedProductsPayload} className="sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" />
       </section>
     </div>
   );
