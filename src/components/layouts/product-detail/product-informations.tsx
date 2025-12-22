@@ -1,10 +1,12 @@
 import ProductActions from "@/components/layouts/product-detail/product-actions";
+import ImageGallery from "@/components/ui/thumbnail-carousel";
 import Image from "next/image";
 
 export default function ProductInformations({ product }: { product?: any }) {
   return (
     <div className="grid md:grid-cols-2 gap-x-10 gap-y-10 mt-10">
-      <ProductGallery primary={product.product_image} />
+      <ImageGallery />
+      {/* <ProductGallery primary={product.product_image} /> */}
       <ProductDescription title={product.product_title} description={product.product_description} categories={product.product_categories} />
     </div>
   );
