@@ -10,7 +10,7 @@ export default function ProductLists({ count, data, className }: { count?: numbe
   return (
     <div className={`grid gap-4 mt-8 ${className}`}>
       {slicedData.map((product: ProductPlaceholderItem, index: number) => (
-        <ProductCard key={index} title={product.product_title} image={product.product_image} href={product.product_id} />
+        <ProductCard key={index} title={product.product_title} image={product.product_image[0]} href={product.product_id} />
       ))}
     </div>
   );
