@@ -1,4 +1,10 @@
-export const PRODUCT_GALLERY_PLACEHOLDER_ITEMS = [
+interface ProductGalleryPlaceholderItem {
+  id: number;
+  url: string;
+  title: string;
+}
+
+export const PRODUCT_GALLERY_PLACEHOLDER_ITEMS: ProductGalleryPlaceholderItem[] = [
   {
     id: 1,
     url: "/product__placeholder.png",
