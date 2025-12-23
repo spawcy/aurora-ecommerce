@@ -1,6 +1,6 @@
 "use client";
 
-import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious, PaginationEllipsis } from "@/components/ui/pagination";
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 
 export default function DynamicPagination({ page, totalPages, goTo, next, prev }: { page: number; totalPages: number; goTo: (page: number) => void; next: () => void; prev: () => void }) {
   const windowSize = 3;
@@ -20,6 +20,8 @@ export default function DynamicPagination({ page, totalPages, goTo, next, prev }
 
   const pagesToShow = [];
   for (let i = start; i <= end; i++) pagesToShow.push(i);
+  const isFirstPage = page <= 1;
+  const isLastPage = page >= totalPages;
 
   return (
     <Pagination className="mt-10">
@@ -27,9 +29,10 @@ export default function DynamicPagination({ page, totalPages, goTo, next, prev }
         <PaginationItem>
           <PaginationPrevious
             href="#"
+            className={isFirstPage ? "pointer-events-none opacity-50" : "cursor-pointer"}
             onClick={(e) => {
               e.preventDefault();
-              prev();
+              if (!isFirstPage) prev();
             }}
           />
         </PaginationItem>
@@ -48,13 +51,13 @@ export default function DynamicPagination({ page, totalPages, goTo, next, prev }
             </PaginationLink>
           </PaginationItem>
         ))}
-
         <PaginationItem>
           <PaginationNext
             href="#"
+            className={isLastPage ? "pointer-events-none opacity-50" : "cursor-pointer"}
             onClick={(e) => {
               e.preventDefault();
-              next();
+              if (!isLastPage) next();
             }}
           />
         </PaginationItem>
