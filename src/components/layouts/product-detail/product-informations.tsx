@@ -5,8 +5,7 @@ import Image from "next/image";
 export default function ProductInformations({ product }: { product?: any }) {
   return (
     <div className="grid md:grid-cols-2 gap-x-10 gap-y-10 mt-10">
-      <ImageGallery />
-      {/* <ProductGallery primary={product.product_image} /> */}
+      <ImageGallery product={product} />
       <ProductDescription title={product.product_title} description={product.product_description} categories={product.product_categories} />
     </div>
   );
