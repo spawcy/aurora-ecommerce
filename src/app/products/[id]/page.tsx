@@ -37,10 +37,9 @@ export default function ShopDetailPage({ params }: { params: Promise<{ id: strin
 
       <section className="bg-accent py-10 mt-10 px-4">
         <div className="max-w-4xl mx-auto">
-          <ShopDetailTabs />
+          <ShopDetailTabs product={data?.data} />
         </div>
       </section>
-
       <section className="my-10 max-w-7xl mx-auto px-4">
         <h2 className="text-2xl">Recommended Product</h2>
         <ProductLists count={4} data={randomizedProductsPayload} className="sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4" />
