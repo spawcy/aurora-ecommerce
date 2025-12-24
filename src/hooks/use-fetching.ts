@@ -1,6 +1,6 @@
 "use client";
 
-import { ProductPlaceholderItem } from "@/const/interfaces/product-placeholder-item";
+import { ProductPlaceholderItem } from "@/const/interfaces/product-placeholder-item-interface";
 import { useEffect } from "react";
 import { useState } from "react";
 
