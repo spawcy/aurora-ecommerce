@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import ProductLoveAction from "./product-love-action";
 import { toast } from "sonner";
 
-export default function ProductActions() {
+export default function ProductActions({ title }: { title: string }) {
   return (
     <div className="w-full my-6 py-6 border-t border-b border-border grid grid-cols-[5.20fr_.9fr] place-items-center gap-4">
       <Button
@@ -12,7 +12,7 @@ export default function ProductActions() {
           toast.promise(
             new Promise((resolve) => {
               setTimeout(() => {
-                window.location.href = "mailto:admin@example.com?subject=Request Pembelian Produk IoT&body=Halo Admin, Saya ingin melakukan pembelian produk IoT.%0AMohon informasi lebih lanjut terkait ketersediaan dan harga. Terima kasih.";
+                window.location.href = `mailto:admin@example.com?subject=Request Pembelian Produk IoT&body=Halo Admin, Saya ingin melakukan pembelian produk ${title}.%0AMohon informasi lebih lanjut terkait ketersediaan dan harga. Terima kasih.`;
                 resolve(true);
               }, 300);
             }),
