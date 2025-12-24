@@ -1,5 +1,6 @@
 import HeaderCard from "@/components/layouts/home/header-card";
 import NewArrivalProducts from "@/components/layouts/home/new-arrival-products";
+import FAQs from "@/components/text-reveal-faqs";
 import Image from "next/image";
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
       </section>
 
       <NewArrivalProducts />
+      <FAQs />
     </main>
   );
 }
