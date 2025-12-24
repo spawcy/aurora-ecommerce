@@ -8,7 +8,7 @@ import { use } from "react";
 import ShopDetailLoadingPage from "@/components/layouts/product-detail/loading";
 import ProductLists, { ProductNotFound } from "@/components/layouts/products/product-lists";
 import { shuffleArray } from "@/hooks/use-shuffle-array";
-import { ProductPlaceholderItem } from "@/const/interfaces/product-placeholder-item";
+import { ProductPlaceholderItem } from "@/const/interfaces/product-placeholder-item-interface";
 
 export default function ShopDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);

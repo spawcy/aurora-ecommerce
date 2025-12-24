@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, animate } from "framer-motion";
-import { ProductPlaceholderItem } from "@/const/interfaces/product-placeholder-item";
+import { ProductPlaceholderItem } from "@/const/interfaces/product-placeholder-item-interface";
 
 const FULL_WIDTH_PX = 120;
 const COLLAPSED_WIDTH_PX = 35;

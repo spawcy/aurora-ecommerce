@@ -1,6 +1,6 @@
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
-import { DynamicRadioProps } from "@/const/interfaces/radio-item";
+import { DynamicRadioProps } from "@/const/interfaces/radio-item-interface";
 
 export default function DynamicRadio({ data, categoryKey, selectedValue, onValueChange }: DynamicRadioProps) {
   return (

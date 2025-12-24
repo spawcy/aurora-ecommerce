@@ -1,5 +1,5 @@
 "use client";
-import { ProductPlaceholderItem } from "@/const/interfaces/product-placeholder-item";
+import { ProductPlaceholderItem } from "@/const/interfaces/product-placeholder-item-interface";
 import ProductCard from "./product-card";
 import NotFoundActions from "../not-found/not-found-actions";
 import NotFoundTitles from "../not-found/not-found-titles";

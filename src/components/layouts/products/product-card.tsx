@@ -1,4 +1,4 @@
-import { ProductCardProps } from "@/const/interfaces/product-card-props";
+import { ProductCardProps } from "@/const/interfaces/product-card-props-interface";
 import Image from "next/image";
 import Link from "next/link";
 

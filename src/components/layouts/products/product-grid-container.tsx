@@ -5,7 +5,7 @@ import SearchInput from "@/components/common/search-input";
 import { useEffect, useState } from "react";
 import { useFetching } from "@/hooks/use-fetching";
 import { ProductCardLoading, ProductsNotFound } from "./product-card";
-import { ProductPlaceholderItem } from "@/const/interfaces/product-placeholder-item";
+import { ProductPlaceholderItem } from "@/const/interfaces/product-placeholder-item-interface";
 import { usePagination } from "@/hooks/use-pagination";
 
 export default function ProductGridContainer() {

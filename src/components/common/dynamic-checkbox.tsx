@@ -1,6 +1,6 @@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import { DynamicCheckboxProps } from "@/const/interfaces/checkbox-item";
+import { DynamicCheckboxProps } from "@/const/interfaces/checkbox-item-interface";
 export function DynamicCheckbox({ data, categoryKey, onCheckedChange, selectedValues }: DynamicCheckboxProps) {
   return (
     <div className="flex flex-col gap-4">
