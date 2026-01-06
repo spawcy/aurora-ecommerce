@@ -5,7 +5,7 @@ export const PRODUCTS_PLACEHOLDER = [
     product_image: ["/product__placeholder.png", "/product__placeholder__2.png", "/product__placeholder__3.png"],
     product_available: true,
     product_description: "A compact Zigbee-based multi-sensor capable of detecting temperature, humidity, and motion. Designed for low power operation and seamless integration with home automation hubs.",
-    product_categories: ["sensors", "environment", "zigbee"],
+    product_categories: ["serial-converter", "touch-screen"],
   },
   {
     product_id: "cjx8f92k0001b0s3p9f1q1ac",
@@ -13,7 +13,7 @@ export const PRODUCTS_PLACEHOLDER = [
     product_image: ["/product__placeholder__2.png", "/product__placeholder__5.png", "/product__placeholder__4.png"],
     product_available: false,
     product_description: "An industrial-grade LoRaWAN air quality node that measures PM2.5, CO₂, and VOC levels. Ideal for factories, smart buildings, and environmental monitoring deployments.",
-    product_categories: ["sensors", "environment", "lorawan"],
+    product_categories: ["non-touch-screen"],
   },
   {
     product_id: "cjx8f92k0001c0s3p9f1q1ad",
@@ -21,7 +21,7 @@ export const PRODUCTS_PLACEHOLDER = [
     product_image: ["/product__placeholder__3.png", "/product__placeholder__6.png", "/product__placeholder.png"],
     product_available: true,
     product_description: "A WiFi-enabled smart plug capable of remote switching and real-time energy usage monitoring. Supports automation routines and integrates with major smart home platforms.",
-    product_categories: ["actuator", "power", "wifi"],
+    product_categories: ["touch-screen", "hub"],
   },
   {
     product_id: "cjx8f92k0001d0s3p9f1q1ae",
@@ -29,7 +29,7 @@ export const PRODUCTS_PLACEHOLDER = [
     product_image: ["/product__placeholder__4.png", "/product__placeholder__4.png", "/product__placeholder__6.png"],
     product_available: true,
     product_description: "A powerful industrial IoT gateway supporting Ethernet, WiFi, and LTE connectivity. Features edge processing, secure data routing, and cloud integration capabilities.",
-    product_categories: ["gateway", "industrial", "edge-computing"],
+    product_categories: ["hub", "remote-io"],
   },
   {
     product_id: "cjx8f92k0001d0s3p9f1q2828",
@@ -46,7 +46,7 @@ export const PRODUCTS_PLACEHOLDER = [
     product_image: ["/product__placeholder__6.png", "/product__placeholder.png", "/product__placeholder__2.png"],
     product_available: true,
     product_description: "Ultra-compact PLC controller designed for small automation systems. Features high-speed processing, modular expansion support, and integrated communication ports.",
-    product_categories: ["plc", "automation", "industrial"],
+    product_categories: ["hub", "remote-io"],
   },
   {
     product_id: "cjx8f92k0001b0s3p9f1q1ac",
@@ -54,7 +54,7 @@ export const PRODUCTS_PLACEHOLDER = [
     product_image: ["/product__placeholder__2.png", "/product__placeholder__5.png", "/product__placeholder__4.png"],
     product_available: false,
     product_description: "An industrial-grade LoRaWAN air quality node that measures PM2.5, CO₂, and VOC levels. Ideal for factories, smart buildings, and environmental monitoring deployments.",
-    product_categories: ["sensors", "environment", "lorawan"],
+    product_categories: ["level-sensor-ultrasonik", "lorawan"],
   },
   {
     product_id: "cjx8f92k0001d0s3p9f1q1ae",
@@ -62,6 +62,6 @@ export const PRODUCTS_PLACEHOLDER = [
     product_image: ["/product__placeholder__4.png", "/product__placeholder__4.png", "/product__placeholder__6.png"],
     product_available: true,
     product_description: "A powerful industrial IoT gateway supporting Ethernet, WiFi, and LTE connectivity. Features edge processing, secure data routing, and cloud integration capabilities.",
-    product_categories: ["gateway", "industrial", "edge-computing"],
+    product_categories: ["sensor-ultrasonik", "edge-computing"],
   },
 ];
