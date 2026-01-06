@@ -81,9 +81,7 @@ export default function DynamicAccordion() {
       <Accordion type="multiple" className="w-full" defaultValue={["item-1", "item-2", "item-3"]}>
         {ACCORDION_DATA.map((item) => (
           <AccordionItem key={item.key} value={item.value}>
-            <AccordionTrigger className="cursor-pointer">
-              {item.trigger}
-            </AccordionTrigger>
+            <AccordionTrigger className="cursor-pointer">{item.trigger}</AccordionTrigger>
             <AccordionContent className="flex flex-col gap-2 text-balance">
               {item.children ? (
                 <NestedAccordion data={item.children} onCheckedChange={handleCheckboxChange} selectedItems={selectedItems} />
@@ -127,9 +125,7 @@ export function NestedAccordion({ data, onCheckedChange, selectedItems }: Nested
     <Accordion type="multiple" className="w-full pl-4 border-b">
       {data.map((item) => (
         <AccordionItem key={item.value} value={item.value}>
-          <AccordionTrigger className="cursor-pointer text-sm font-medium">
-            {item.trigger}
-          </AccordionTrigger>
+          <AccordionTrigger className="cursor-pointer text-sm font-medium">{item.trigger}</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-4 text-balance">
             <DynamicRadio data={item.contentData} categoryKey={item.key} selectedValue={selectedItems[item.key]?.[0] || ""} onValueChange={(value) => handleRadioChange(item.key, value)} />
           </AccordionContent>

@@ -37,7 +37,6 @@ export function ProductDescription({ title, description, categories }: { title?:
     <div>
       <h2 className="text-3xl sm:text-5xl font-semibold text-foreground mt-4 leading-relaxed">{title}</h2>
       <p className="text-secondary-foreground mt-4 leading-relaxed">{description}</p>
-
       <ProductActions title={title || "product is error, contact the admin"} />
       <ProductCategory categories={categories} />
     </div>
