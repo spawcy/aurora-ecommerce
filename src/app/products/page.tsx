@@ -7,6 +7,7 @@ import { Metadata } from "next";
 import ProductGridContainer from "@/components/layouts/products/product-grid-container";
 import DynamicAccordion from "@/components/common/dynamic-accordion";
 import { Suspense } from "react";
+import { ProductCardLoading } from "@/components/layouts/products/product-card";
 
 export default function ShopPage() {
   return <ShopFilters />;
@@ -31,7 +32,9 @@ function ShopMainLayout() {
           </Suspense>
         </aside>
       </div>
-      <ProductGridContainer />
+      <Suspense fallback={<ProductCardLoading className="sm:grid-cols-2 lg:grid-cols-3" count={6} />}>
+        <ProductGridContainer />
+      </Suspense>
     </main>
   );
 }
