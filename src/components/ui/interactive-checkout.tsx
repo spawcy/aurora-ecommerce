@@ -153,7 +153,7 @@ function InteractiveCheckout({ products = defaultProducts }: InteractiveCheckout
             <div className="flex items-center justify-between mb-3">
               <span className="text-sm font-medium text-zinc-900 dark:text-zinc-100">Total</span>
               <motion.span layout className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
-                <NumberFlow value={totalPrice} />
+                Rp. <NumberFlow value={totalPrice} />
               </motion.span>
             </div>
             <Button size="sm" className="w-full gap-2">
