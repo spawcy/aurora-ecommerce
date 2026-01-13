@@ -1,12 +1,14 @@
-export interface CheckboxItem {
+export type CheckboxItem = {
   value: string;
   label: string;
   defaultChecked?: boolean;
-}
+};
 
-export interface DynamicCheckboxProps {
-  data: CheckboxItem[];
+export type RawCheckboxItem = { value: string; label: string; defaultChecked?: boolean } | { value: string; label?: undefined; defaultChecked?: undefined };
+
+export type DynamicCheckboxProps = {
+  data: RawCheckboxItem[];
   categoryKey: string;
-  onCheckedChange: (categoryKey: string, itemValue: string, isChecked: boolean) => void;
   selectedValues: string[];
-}
+  onCheckedChange: (categoryKey: string, value: string, checked: boolean) => void;
+};
